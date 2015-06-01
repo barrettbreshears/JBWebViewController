@@ -98,10 +98,12 @@
     [_subtitleLabel sizeToFit];
      */
     
+    /*
     // Correct frame sizes after sizeToFit
     [self adjustNavigationbar];
     
     // Add new titleview with labels
+    
     _titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 30)];
     [_titleView setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
     
@@ -115,6 +117,7 @@
     UIBarButtonItem *dismissButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Dismiss"] style:UIBarButtonItemStylePlain target:self action:@selector(dismiss)];
     [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects:dismissButton, shareButton, nil]];
     
+     */
     // Add a webview
     _webView = [[UIWebView alloc] initWithFrame:self.view.frame];
     [_webView setAutoresizingMask:UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth];
@@ -260,6 +263,7 @@
 }
 
 - (void)addNavigationButtonsButtons {
+    /*
     // Creating buttons
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Back"] style:UIBarButtonItemStylePlain target:self action:@selector(navigateBack)];
     UIBarButtonItem *forwardButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Forward"] style:UIBarButtonItemStylePlain target:self action:@selector(navigateForward)];
@@ -272,9 +276,11 @@
     
     // And finally adjust NavigationBar
     [self adjustNavigationbar];
+     */
 }
 
 - (void)updateNavigationButtons {
+    /*
     // If no left buttons are present and webView can go back, then add buttons
     if(!self.navigationItem.leftBarButtonItems.count && [_webView canGoBack]) {
         [self addNavigationButtonsButtons];
@@ -293,6 +299,7 @@
     } else {
         ((UIBarButtonItem *)self.navigationItem.leftBarButtonItems[1]).enabled = NO;
     }
+     */
 }
 
 #pragma mark - "Titles & subtitles"
