@@ -227,7 +227,7 @@
 
 - (void)setWebTitle:(NSString *)title {
     // Set title & update frame
-    self.navigationItem.title = title
+    self.navigationItem.title = title;
     /*
     [_titleLabel setText:title];
     [_titleLabel sizeToFit];
