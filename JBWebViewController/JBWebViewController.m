@@ -79,45 +79,6 @@
     self.automaticallyAdjustsScrollViewInsets = YES;
     self.edgesForExtendedLayout = UIRectEdgeTop;
     
-    // Create title & subtitle labels
-    /*
-    _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
-    [_titleLabel setBackgroundColor:[UIColor clearColor]];
-    [_titleLabel setTextColor:[UIColor blackColor]];
-    [_titleLabel setFont:[UIFont boldSystemFontOfSize:14]];
-    [_titleLabel setTextAlignment:NSTextAlignmentNatural];
-    [_titleLabel setText:_loadingString];
-    [_titleLabel sizeToFit];
-    
-    _subtitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 14, 0, 0)];
-    [_subtitleLabel setBackgroundColor:[UIColor clearColor]];
-    [_subtitleLabel setTextColor:[UIColor blackColor]];
-    [_subtitleLabel setFont:[UIFont systemFontOfSize:12]];
-    [_subtitleLabel setTextAlignment:NSTextAlignmentLeft];
-    [_subtitleLabel setText:[self getDomainFromString:[NSString stringWithFormat:@"%@", _url]]];
-    [_subtitleLabel sizeToFit];
-     */
-    
-    /*
-    // Correct frame sizes after sizeToFit
-    [self adjustNavigationbar];
-    
-    // Add new titleview with labels
-    
-    _titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 30)];
-    [_titleView setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
-    
-    [_titleView addSubview:_titleLabel];
-    [_titleView addSubview:_subtitleLabel];
-
-    self.navigationItem.titleView = _titleView;
-    
-    // Inset right buttons
-    UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Share"] style:UIBarButtonItemStylePlain target:self action:@selector(share)];
-    UIBarButtonItem *dismissButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Dismiss"] style:UIBarButtonItemStylePlain target:self action:@selector(dismiss)];
-    [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects:dismissButton, shareButton, nil]];
-    
-     */
     // Add a webview
     _webView = [[UIWebView alloc] initWithFrame:self.view.frame];
     [_webView setAutoresizingMask:UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth];
@@ -262,46 +223,6 @@
     [_subtitleLabel setFrame:CGRectMake(_subtitleLabel.frame.origin.x, _subtitleLabel.frame.origin.y, MIN(_subtitleLabel.frame.size.width, self.view.frame.size.width - buttonsWidth), _subtitleLabel.frame.size.height)];
 }
 
-- (void)addNavigationButtonsButtons {
-    /*
-    // Creating buttons
-    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Back"] style:UIBarButtonItemStylePlain target:self action:@selector(navigateBack)];
-    UIBarButtonItem *forwardButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Forward"] style:UIBarButtonItemStylePlain target:self action:@selector(navigateForward)];
-    
-    // Adding buttons to NavigationBar
-    [self.navigationItem setLeftBarButtonItems:[NSArray arrayWithObjects:backButton, forwardButton, nil]];
-    
-    // Remember that we have extra buttons now
-    _hasExtraButtons = YES;
-    
-    // And finally adjust NavigationBar
-    [self adjustNavigationbar];
-     */
-}
-
-- (void)updateNavigationButtons {
-    /*
-    // If no left buttons are present and webView can go back, then add buttons
-    if(!self.navigationItem.leftBarButtonItems.count && [_webView canGoBack]) {
-        [self addNavigationButtonsButtons];
-    }
-    
-    // If we can go back, enable back button
-    if([_webView canGoBack]) {
-        ((UIBarButtonItem *)self.navigationItem.leftBarButtonItems[0]).enabled = YES;
-    } else {
-        ((UIBarButtonItem *)self.navigationItem.leftBarButtonItems[0]).enabled = NO;
-    }
-    
-    // If we can go forward, enable forward button
-    if([_webView canGoForward]) {
-        ((UIBarButtonItem *)self.navigationItem.leftBarButtonItems[1]).enabled = YES;
-    } else {
-        ((UIBarButtonItem *)self.navigationItem.leftBarButtonItems[1]).enabled = NO;
-    }
-     */
-}
-
 #pragma mark - "Titles & subtitles"
 
 - (void)setWebTitle:(NSString *)title {
@@ -359,7 +280,6 @@
     [self setWebTitle:title];
     [self setWebSubtitle:subtitle];
     
-    [self updateNavigationButtons];
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
