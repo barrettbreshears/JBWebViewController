@@ -27,6 +27,14 @@ typedef void (^completion)(JBWebViewController *controller);
 // Public variables
 @property (nonatomic, strong) UIWebView *webView;
 @property (nonatomic, assign) BOOL hideAddressBar;
+@property (nonatomic, strong) NSURL *url;
+@property (nonatomic) BOOL hasExtraButtons;
+@property (nonatomic, strong) UIView *titleView;
+@property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UILabel *subtitleLabel;
+@property (nonatomic, strong) NJKWebViewProgress *progressProxy;
+@property (nonatomic, strong) NJKWebViewProgressView *progressView;
+@property (nonatomic, strong) UIPopoverController *popoverShareController;
 
 // Public header methods
 - (id)initWithUrl:(NSURL *)url;

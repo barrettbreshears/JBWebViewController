@@ -10,16 +10,6 @@
 
 @interface JBWebViewController ()
 
-    // Private properties
-    @property (nonatomic, strong) NSURL *url;
-    @property (nonatomic) BOOL hasExtraButtons;
-    @property (nonatomic, strong) UIView *titleView;
-    @property (nonatomic, strong) UILabel *titleLabel;
-    @property (nonatomic, strong) UILabel *subtitleLabel;
-    @property (nonatomic, strong) NJKWebViewProgress *progressProxy;
-    @property (nonatomic, strong) NJKWebViewProgressView *progressView;
-    @property (nonatomic, strong) UIPopoverController *popoverShareController;
-
 @end
 
 @implementation JBWebViewController
@@ -90,6 +80,7 @@
     self.edgesForExtendedLayout = UIRectEdgeTop;
     
     // Create title & subtitle labels
+    /*
     _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
     [_titleLabel setBackgroundColor:[UIColor clearColor]];
     [_titleLabel setTextColor:[UIColor blackColor]];
@@ -105,6 +96,7 @@
     [_subtitleLabel setTextAlignment:NSTextAlignmentLeft];
     [_subtitleLabel setText:[self getDomainFromString:[NSString stringWithFormat:@"%@", _url]]];
     [_subtitleLabel sizeToFit];
+     */
     
     // Correct frame sizes after sizeToFit
     [self adjustNavigationbar];
